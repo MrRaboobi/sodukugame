@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package soduku;
 
 import java.util.Scanner;
@@ -26,15 +22,19 @@ public class Soduku {
         while (game = true && userflag !=0) {
             int flag; int flagIndex;
         
-        System.out.println("Enter the value from 1 to 9");
+        System.out.println("Enter the value from 1 to 9"); //takes the input from user
         int number = input.nextInt();
         
-        System.out.println("Enter the row index of board");
+        System.out.println("Enter the row index of board"); //takes the row index number from user
         int row = input.nextInt();
         
-        System.out.println("Enter the column index of board");
+        System.out.println("Enter the column index of board"); //takes the column index number from user
          int column = input.nextInt();
          
+            // Step 1 and 2: validate the input, row index and column index using a method
+            // Step 3: Validates the move using method to check wether the input is duplicated in its row or column
+            // Step 4: Validates the 3x3 boxes of soduku for duplication of any number
+            
          if ((flag=validateNumber(number))==0){
             if ((flag=validateIndex(row, column))==0){
                 validateMove(soduku, number, row, column);
@@ -47,11 +47,11 @@ public class Soduku {
             System.out.println("Please enter the valid number");
 
 
-         printSoduku(soduku);
+         printSoduku(soduku); //prints the soduku board 
 
-         game = continueGame(soduku);
+         game = continueGame(soduku); //check either the board is solved or not
 
-         System.out.println("Please enter 0 to exit");
+         System.out.println("Please enter 0 to exit"); //takes input from user to exit the game
          userflag = input.nextInt();
         }
     }
